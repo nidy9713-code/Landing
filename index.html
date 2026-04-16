@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автоматизация бизнеса через Telegram-ботов | Профессиональная разработка</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Синий для доверия (25-45 лет)
+                        secondary: '#1e293b', // Глубокий серый для текста
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-secondary bg-slate-50 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-brands fa-telegram text-primary text-3xl"></i>
+                <span class="font-bold text-xl tracking-tight text-slate-800">BotAuto</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="#problem" class="hover:text-primary transition-colors">Проблема</a>
+                <a href="#solution" class="hover:text-primary transition-colors">Решение</a>
+                <a href="#cases" class="hover:text-primary transition-colors">Наши решения</a>
+                <a href="#how" class="hover:text-primary transition-colors">Как это работает</a>
+                <a href="#pricing" class="hover:text-primary transition-colors">Цены</a>
+                <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+            </nav>
+            <a href="#contact" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">
+                Консультация
+            </a>
+        </div>
+    </header>
+
+    <!-- Экран 1: Герой (Hero) -->
+    <section id="hero" class="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+        <div class="container mx-auto px-4 md:px-6 relative">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-primary uppercase bg-blue-50 rounded-full">
+                    Разработка Telegram-ботов для бизнеса
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                    Автоматизируйте свой бизнес там, где ваши клиенты — <span class="text-primary">в Telegram</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Создаем умных ботов, которые заменяют отделы продаж, автоматизируют рутину и увеличивают вашу прибыль 24/7.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transform hover:-translate-y-0.5 transition-all shadow-xl shadow-blue-500/30">
+                        Рассчитать стоимость бота
+                    </a>
+                    <a href="#cases" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 font-bold rounded-xl hover:bg-slate-50 transition-all">
+                        Посмотреть кейсы
+                    </a>
+                </div>
+                <div class="mt-12 flex justify-center items-center space-x-8 text-slate-400 grayscale opacity-70">
+                    <span class="text-sm font-medium italic">Работаем с:</span>
+                    <i class="fa-brands fa-python text-2xl" title="Python"></i>
+                    <i class="fa-brands fa-node-js text-2xl" title="NodeJS"></i>
+                    <i class="fa-solid fa-database text-2xl" title="PostgreSQL/Redis"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 2: Боль / Проблема -->
+    <section id="problem" class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ваш бизнес тонет в операционке?</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-clock-rotate-left text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Рутина менеджеров</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Сотрудники тратят часы на однотипные ответы, вместо того чтобы закрывать сделки и развивать проект.
+                    </p>
+                </div>
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-envelope-open-text text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Потерянные заявки</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Запросы клиентов теряются в почте, Excel-таблицах или бесконечных чатах. Клиенты уходят к конкурентам.
+                    </p>
+                </div>
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-money-bill-trend-up text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Дорогие системы</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Вы платите за сложные CRM, которыми никто не пользуется, а процессы остаются хаотичными и непрозрачными.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <p class="text-xl font-medium text-slate-800 italic">
+                    Каждый пропущенный диалог — это упущенная прибыль. Пора это исправить.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 3: Решение -->
+    <section id="solution" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                        Telegram-бот — ваш самый дисциплинированный сотрудник
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-slate-300 text-lg">Работает 24/7 без отпусков, больничных и перерывов на обед.</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-slate-300 text-lg">Мгновенно отвечает на запросы тысяч клиентов одновременно.</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-slate-300 text-lg">Интегрируется с 1С, Bitrix24, Google Sheets и платежными системами.</p>
+                        </div>
+                    </div>
+                    <p class="mt-10 text-slate-400 italic">
+                        Мы проектируем ботов, которые берут на себя всю «грязную» работу, освобождая время для стратегии.
+                    </p>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-tr from-primary/30 to-blue-600/30 absolute -inset-4 blur-2xl rounded-full"></div>
+                    <div class="relative bg-slate-800 p-4 rounded-3xl border border-slate-700 shadow-2xl">
+                        <div class="flex items-center space-x-2 mb-4 border-b border-slate-700 pb-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-start">
+                                <div class="bg-slate-700 p-3 rounded-2xl rounded-tl-none max-w-[80%]">
+                                    <p class="text-sm">Здравствуйте! Мне нужна помощь в автоматизации склада.</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-primary p-3 rounded-2xl rounded-tr-none max-w-[80%]">
+                                    <p class="text-sm">Добрый день! Я подготовил расчет по вашим позициям. Файл уже загружен в вашу CRM. Хотите ознакомиться?</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-slate-700 p-3 rounded-2xl rounded-tl-none max-w-[80%]">
+                                    <p class="text-sm">Да, давайте. И сразу выставьте счет.</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-primary p-3 rounded-2xl rounded-tr-none max-w-[80%]">
+                                    <p class="text-sm">Счет №452 сформирован и отправлен вам. Оплата возможна картой через кнопку ниже.</p>
+                                    <div class="mt-2 bg-white/20 p-2 rounded-lg text-center cursor-pointer hover:bg-white/30 transition-colors">
+                                        💳 Оплатить 45 000 ₽
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 4: Как это работает -->
+    <section id="how" class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Путь от идеи до запуска за 4 шага</h2>
+                <p class="text-slate-600">Мы берем на себя всю техническую часть, пока вы занимаетесь бизнесом</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="relative group">
+                    <div class="text-6xl font-black text-slate-100 absolute -top-4 -left-2 z-0 group-hover:text-blue-50 transition-colors">01</div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3 mt-4">Анализ</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Разбираем ваши бизнес-процессы и находим точки для максимальной автоматизации.</p>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="text-6xl font-black text-slate-100 absolute -top-4 -left-2 z-0 group-hover:text-blue-50 transition-colors">02</div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3 mt-4">Проектирование</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Создаем логическую карту бота и интерфейс (UX/UI), интуитивно понятный клиенту.</p>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="text-6xl font-black text-slate-100 absolute -top-4 -left-2 z-0 group-hover:text-blue-50 transition-colors">03</div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3 mt-4">Разработка</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Программируем функционал, подключаем API и проводим тщательное тестирование.</p>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="text-6xl font-black text-slate-100 absolute -top-4 -left-2 z-0 group-hover:text-blue-50 transition-colors">04</div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-3 mt-4">Запуск</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Передаем ключи, обучаем команду и обеспечиваем техническую поддержку 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 5: Наши решения (Кейсы) -->
+    <section id="cases" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Наши решения</h2>
+                <p class="text-slate-600">Наши разработки, которые уже приносят пользу и автоматизируют процессы</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Проект 1: Столовая -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-utensils text-5xl opacity-20 absolute"></i>
+                        <span class="text-xl font-bold relative text-center px-4">Бот для автоматизации столовой</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center text-green-600 font-medium">
+                                <i class="fa-solid fa-arrow-down mr-2"></i> Очереди: -45%
+                            </li>
+                            <li class="flex items-center text-green-600 font-medium">
+                                <i class="fa-solid fa-arrow-up mr-2"></i> Средний чек: +15%
+                            </li>
+                            <li class="flex items-center text-blue-600 font-medium">
+                                <i class="fa-solid fa-clock mr-2"></i> Экономия: 20 мин/чел
+                            </li>
+                        </ul>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Комплексная система предзаказов и оплаты для корпоративных и общественных столовых на Python.</p>
+                    </div>
+                </div>
+                <!-- Проект 2: Техподдержка -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-headset text-5xl opacity-20 absolute"></i>
+                        <span class="text-xl font-bold relative text-center px-4">Бот технической поддержки</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center text-green-600 font-medium">
+                                <i class="fa-solid fa-bolt mr-2"></i> Ответ: < 30 сек
+                            </li>
+                            <li class="flex items-center text-green-600 font-medium">
+                                <i class="fa-solid fa-robot mr-2"></i> Авто-ответы: 70%
+                            </li>
+                            <li class="flex items-center text-blue-600 font-medium">
+                                <i class="fa-solid fa-users-slash mr-2"></i> Нагрузка: -60%
+                            </li>
+                        </ul>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Интеллектуальный помощник техподдержки на Node.js с интеграцией базы знаний (RAG) и Supabase.</p>
+                    </div>
+                </div>
+                <!-- Проект 3: Трекер целей -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+                    <div class="h-48 bg-primary flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-bullseye text-5xl opacity-20 absolute"></i>
+                        <span class="text-xl font-bold relative text-center px-4">Трекер целей и привычек</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center text-green-600 font-medium">
+                                <i class="fa-solid fa-chart-line mr-2"></i> Удержание: +40%
+                            </li>
+                            <li class="flex items-center text-green-600 font-medium">
+                                <i class="fa-solid fa-check-double mr-2"></i> Цели достигнуты: +25%
+                            </li>
+                            <li class="flex items-center text-blue-600 font-medium">
+                                <i class="fa-solid fa-mobile-screen mr-2"></i> Активность: +50%
+                            </li>
+                        </ul>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Полноценное веб-приложение (React) с Telegram-уведомлениями для контроля калорий и веса.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 bg-blue-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-10">
+                    <i class="fa-solid fa-quote-right text-9xl"></i>
+                </div>
+                <div class="max-w-2xl relative z-10">
+                    <p class="text-xl md:text-2xl font-medium mb-6 italic leading-relaxed">
+                        "После внедрения бота мы освободили двух менеджеров от рутины, и они занялись реальными продажами. Окупаемость составила 2 месяца."
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center font-bold">ИВ</div>
+                        <div>
+                            <p class="font-bold">Игорь В.</p>
+                            <p class="text-sm opacity-80">CEO логистической компании</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 6: Цена / Пакеты -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Инвестиции в автоматизацию</h2>
+                <p class="text-slate-600">Выберите подходящий пакет для вашего бизнеса</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Пакет 1 -->
+                <div class="p-8 rounded-3xl border border-slate-200 hover:border-primary transition-all flex flex-col h-full group">
+                    <h3 class="text-xl font-bold mb-2">Старт</h3>
+                    <p class="text-slate-500 text-sm mb-6">Визитка / Медиа-бот</p>
+                    <div class="text-4xl font-extrabold mb-6">от 15 000 ₽</div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Интерактивное меню
+                        </li>
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> FAQ и база знаний
+                        </li>
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Форма обратной связи
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-4 px-6 rounded-xl border border-slate-200 font-bold group-hover:bg-primary group-hover:text-white transition-all">Выбрать Старт</a>
+                </div>
+                <!-- Пакет 2 -->
+                <div class="p-8 rounded-3xl border-2 border-primary shadow-2xl shadow-blue-500/10 flex flex-col h-full relative overflow-hidden bg-slate-50">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-bl-lg uppercase tracking-widest">Популярно</div>
+                    <h3 class="text-xl font-bold mb-2">Бизнес</h3>
+                    <p class="text-slate-500 text-sm mb-6">Автоматизация процессов</p>
+                    <div class="text-4xl font-extrabold mb-6 text-primary">от 45 000 ₽</div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center text-sm text-slate-700 font-medium">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Прием платежей (РФ/Мир)
+                        </li>
+                        <li class="flex items-center text-sm text-slate-700 font-medium">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Интеграция с CRM / Таблицами
+                        </li>
+                        <li class="flex items-center text-sm text-slate-700 font-medium">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Админ-панель управления
+                        </li>
+                        <li class="flex items-center text-sm text-slate-700 font-medium">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Аналитика пользователей
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-4 px-6 rounded-xl bg-primary text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30">Выбрать Бизнес</a>
+                </div>
+                <!-- Пакет 3 -->
+                <div class="p-8 rounded-3xl border border-slate-200 hover:border-primary transition-all flex flex-col h-full group">
+                    <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+                    <p class="text-slate-500 text-sm mb-6">Сложные экосистемы</p>
+                    <div class="text-4xl font-extrabold mb-6 uppercase text-lg">Индивидуально</div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Интеграция с AI (ChatGPT/LLM)
+                        </li>
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Кастомные базы данных
+                        </li>
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Многоуровневые роли доступа
+                        </li>
+                        <li class="flex items-center text-sm text-slate-600">
+                            <i class="fa-solid fa-circle-check text-primary mr-3"></i> Полная поддержка и SLA
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-4 px-6 rounded-xl border border-slate-200 font-bold group-hover:bg-primary group-hover:text-white transition-all">Запросить расчет</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 7: FAQ -->
+    <section id="faq" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-slate-600">Если у вас остались сомнения — мы здесь, чтобы помочь</p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-slate-800">А если Telegram заблокируют или он упадет?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 text-sm hidden">
+                        Telegram — одна из самых стабильных платформ в мире. Мы также проектируем архитектуру таким образом, чтобы логику бота можно было перенести в VK или WhatsApp при необходимости с минимальными затратами.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-slate-800">Смогу ли я сам менять текст или цены в боте?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 text-sm hidden">
+                        Да, конечно. Мы подключаем удобную панель управления. Чаще всего это Google Таблицы: вы меняете цену в ячейке — и она мгновенно обновляется в боте. Никаких знаний кода не требуется.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-slate-800">Как долго длится разработка?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 text-sm hidden">
+                        Простой бот-визитка запускается за 3-5 дней. Сложные системы автоматизации с интеграциями занимают от 2 до 4 недель. Мы всегда называем реальные сроки на этапе консультации.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 8: Финальный CTA -->
+    <section id="contact" class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 0 L100 100 M100 0 L0 100" stroke="white" stroke-width="0.5"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-5xl mx-auto bg-white rounded-[40px] shadow-2xl overflow-hidden grid md:grid-cols-2">
+                <div class="p-8 md:p-16 bg-slate-900 text-white">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы масштабировать свой бизнес?</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Оставьте заявку на бесплатную консультацию. Мы изучим ваши процессы и предложим оптимальное решение для автоматизации.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                <i class="fa-brands fa-telegram"></i>
+                            </div>
+                            <span class="font-medium">@bot_auto_manager</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="font-medium">hello@botauto.ru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 md:p-16 bg-white">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Как вас зовут?</label>
+                            <input type="text" placeholder="Иван Иванов" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Ваш Telegram или Телефон</label>
+                            <input type="text" placeholder="@username / +7..." class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Опишите задачу (кратко)</label>
+                            <textarea rows="3" placeholder="Нужен бот для..." class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"></textarea>
+                        </div>
+                        <button type="button" class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30">
+                            Отправить заявку
+                        </button>
+                        <p class="text-[10px] text-slate-400 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-brands fa-telegram text-primary text-2xl"></i>
+                    <span class="font-bold text-lg tracking-tight text-slate-800">BotAuto</span>
+                </div>
+                <div class="text-slate-400 text-sm">
+                    © 2026 BotAuto. Все права защищены. Разработка Telegram-ботов и автоматизация.
+                </div>
+                <div class="flex space-x-6 text-slate-400">
+                    <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-vk"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors"><i class="fa-solid fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функция для аккордеона FAQ
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Плавное появление при скролле
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('opacity-0');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
