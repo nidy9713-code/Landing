@@ -264,7 +264,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Наши решения</h2>
                 <p class="text-slate-600">Реальные проекты, которые уже приносят прибыль и автоматизируют бизнес-процессы</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Проект 1: Здоровое питание -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
                     <div class="h-48 bg-green-600 flex items-center justify-center text-white relative">
@@ -272,18 +272,15 @@
                         <span class="text-xl font-bold relative text-center px-4">Бот здорового питания</span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <ul class="space-y-2 mb-6 text-sm">
-                            <li class="flex items-center text-green-600 font-medium">
-                                <i class="fa-solid fa-utensils mr-2"></i> Рецепты: 500+
-                            </li>
-                            <li class="flex items-center text-green-600 font-medium">
-                                <i class="fa-solid fa-users mr-2"></i> Пользователи: 1200+
-                            </li>
-                            <li class="flex items-center text-blue-600 font-medium">
-                                <i class="fa-solid fa-chart-pie mr-2"></i> Конверсия: 12%
-                            </li>
-                        </ul>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Персональный ассистент на Python с базой полезных рецептов, конструктором меню и интеграцией с Supabase.</p>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Персональный ассистент на Python с базой полезных рецептов, конструктором меню и интеграцией с Supabase для хранения данных пользователей.</p>
+                        <div class="flex flex-col space-y-3">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Технологии:</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Python</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Aiogram</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Supabase</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Проект 2: Апартаменты Сочи -->
@@ -293,25 +290,16 @@
                         <span class="text-xl font-bold relative text-center px-4">Апартаменты в Сочи</span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <ul class="space-y-2 mb-6 text-sm">
-                            <li class="flex items-center text-green-600 font-medium">
-                                <i class="fa-solid fa-calendar-check mr-2"></i> Прямые брони: +35%
-                            </li>
-                            <li class="flex items-center text-green-600 font-medium">
-                                <i class="fa-solid fa-wallet mr-2"></i> Экономия: 100к+ ₽/мес
-                            </li>
-                            <li class="flex items-center text-blue-600 font-medium">
-                                <i class="fa-solid fa-bolt mr-2"></i> Бронь: < 2 мин
-                            </li>
-                        </ul>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Современный сайт на Tilda с системой онлайн-бронирования, автоматизацией заселения и круглогодичным бассейном.</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://apartmentssochi.tilda.ws/page141966796.html" target="_blank" class="inline-flex items-center text-primary font-bold hover:text-blue-700 transition-colors">
-                                Перейти на сайт <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
-                            </a>
-                            <a href="https://t.me/Apartments_in_Sochi_bot" target="_blank" class="inline-flex items-center text-blue-400 font-bold hover:text-blue-500 transition-colors">
-                                <i class="fa-brands fa-telegram mr-2"></i> @Apartments_in_Sochi_bot
-                            </a>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Современный сайт на Tilda с системой онлайн-бронирования, автоматизацией заселения и Telegram-ботом для поддержки гостей.</p>
+                        <div class="flex flex-col space-y-4">
+                            <div class="flex flex-col space-y-2">
+                                <a href="https://apartmentssochi.tilda.ws/page141966796.html" target="_blank" class="inline-flex items-center text-primary font-bold hover:text-blue-700 transition-colors">
+                                    Перейти на сайт <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                                </a>
+                                <a href="https://t.me/Apartments_in_Sochi_bot" target="_blank" class="inline-flex items-center text-blue-400 font-bold hover:text-blue-500 transition-colors">
+                                    <i class="fa-brands fa-telegram mr-2"></i> @Apartments_in_Sochi_bot
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -322,37 +310,35 @@
                         <span class="text-xl font-bold relative text-center px-4">Школа вокала & CRM-бот</span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <ul class="space-y-2 mb-6 text-sm">
-                            <li class="flex items-center text-green-600 font-medium">
-                                <i class="fa-solid fa-tags mr-2"></i> Цена лида: -40%
-                            </li>
-                            <li class="flex items-center text-green-600 font-medium">
-                                <i class="fa-solid fa-calendar-days mr-2"></i> Авто-график: 90%
-                            </li>
-                            <li class="flex items-center text-blue-600 font-medium">
-                                <i class="fa-solid fa-heart mr-2"></i> Retention: +20%
-                            </li>
-                        </ul>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Комплексная экосистема на Next.js и Telegram для управления уроками, расписанием и автоматическими уведомлениями учеников.</p>
-                        <a href="https://t.me/zvezda_karaoke_bot" target="_blank" class="inline-flex items-center text-blue-400 font-bold hover:text-blue-500 transition-colors">
-                            <i class="fa-brands fa-telegram mr-2"></i> @zvezda_karaoke_bot
-                        </a>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Комплексная экосистема для управления уроками, расписанием и автоматическими уведомлениями учеников через Telegram.</p>
+                        <div class="flex flex-col space-y-4">
+                            <a href="https://t.me/zvezda_karaoke_bot" target="_blank" class="inline-flex items-center text-blue-400 font-bold hover:text-blue-500 transition-colors">
+                                <i class="fa-brands fa-telegram mr-2"></i> @zvezda_karaoke_bot
+                            </a>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Next.js</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Node.js</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Telegram API</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mt-16 bg-blue-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                <div class="absolute right-0 bottom-0 opacity-10">
-                    <i class="fa-solid fa-quote-right text-9xl"></i>
-                </div>
-                <div class="max-w-2xl relative z-10">
-                    <p class="text-xl md:text-2xl font-medium mb-6 italic leading-relaxed">
-                        "После внедрения бота мы освободили двух менеджеров от рутины, и они занялись реальными продажами. Окупаемость составила 2 месяца."
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center font-bold">ИВ</div>
-                        <div>
-                            <p class="font-bold">Игорь В.</p>
-                            <p class="text-sm opacity-80">CEO логистической компании</p>
+                <!-- Проект 4: Трекер целей -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+                    <div class="h-48 bg-indigo-600 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-bullseye text-5xl opacity-20 absolute"></i>
+                        <span class="text-xl font-bold relative text-center px-4">Трекер целей и привычек</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Веб-приложение для контроля калорий, веса и тренировок с системой Telegram-уведомлений о достижении дневных целей.</p>
+                        <div class="flex flex-col space-y-3">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Стек:</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">React</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Tailwind</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Supabase</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-[10px] font-bold">Edge Functions</span>
+                            </div>
                         </div>
                     </div>
                 </div>
