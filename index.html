@@ -35,6 +35,8 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        [data-lang="ru"] { display: none; }
+        .lang-active { color: #ff007f !important; font-weight: bold; }
     </style>
 </head>
 <body class="font-sans text-slate-300 bg-dark antialiased">
@@ -47,15 +49,20 @@
                 <span class="font-bold text-xl tracking-tight text-white">Nidy Build</span>
             </div>
             <nav class="hidden md:flex space-x-8 font-medium text-sm">
-                <a href="#problem" class="hover:text-primary transition-colors text-slate-400">Problem</a>
-                <a href="#solution" class="hover:text-primary transition-colors text-slate-400">Solution</a>
-                <a href="#cases" class="hover:text-primary transition-colors text-slate-400">Work</a>
-                <a href="#how" class="hover:text-primary transition-colors text-slate-400">Process</a>
-                <a href="#pricing" class="hover:text-primary transition-colors text-slate-400">Pricing</a>
-                <a href="#faq" class="hover:text-primary transition-colors text-slate-400">FAQ</a>
+                <a href="#problem" class="hover:text-primary transition-colors text-slate-400" data-t="nav_problem">Problem</a>
+                <a href="#solution" class="hover:text-primary transition-colors text-slate-400" data-t="nav_solution">Solution</a>
+                <a href="#cases" class="hover:text-primary transition-colors text-slate-400" data-t="nav_work">Work</a>
+                <a href="#how" class="hover:text-primary transition-colors text-slate-400" data-t="nav_process">Process</a>
+                <a href="#pricing" class="hover:text-primary transition-colors text-slate-400" data-t="nav_pricing">Pricing</a>
+                <a href="#faq" class="hover:text-primary transition-colors text-slate-400" data-t="nav_faq">FAQ</a>
             </nav>
             <div class="flex items-center space-x-4">
-                <a href="#contact" class="hidden sm:inline-block bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-pink-600 transition-all shadow-lg shadow-pink-500/20">
+                <div class="flex items-center bg-white/5 rounded-full px-3 py-1 border border-white/10 text-[10px] font-bold">
+                    <button onclick="setLanguage('en')" id="lang-en" class="hover:text-primary transition-colors px-1 lang-active">EN</button>
+                    <span class="text-slate-600 mx-1">|</span>
+                    <button onclick="setLanguage('ru')" id="lang-ru" class="hover:text-primary transition-colors px-1 text-slate-500">RU</button>
+                </div>
+                <a href="#contact" class="hidden sm:inline-block bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-pink-600 transition-all shadow-lg shadow-pink-500/20" data-t="nav_quote">
                     Get a Quote
                 </a>
                 <!-- Mobile Menu Button -->
@@ -89,17 +96,21 @@
                     Vibecoding & AI Automation
                 </span>
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-                    Build at the speed of thought with <span class="text-primary drop-shadow-[0_0_15px_rgba(255,0,127,0.5)]">Vibecoding</span>
+                    <span data-lang="en">Build at the speed of thought with <span class="text-primary drop-shadow-[0_0_15px_rgba(255,0,127,0.5)]">Vibecoding</span></span>
+                    <span data-lang="ru">Создавайте со скоростью мысли с <span class="text-primary drop-shadow-[0_0_15px_rgba(255,0,127,0.5)]">Vibecoding</span></span>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                    I build high-end websites and intelligent Telegram bots that replace entire departments, automate routine, and scale your revenue 24/7.
+                    <span data-lang="en">I build high-end websites and intelligent Telegram bots that replace entire departments, automate routine, and scale your revenue 24/7.</span>
+                    <span data-lang="ru">Я создаю высококлассные сайты и умных Telegram-ботов, которые заменяют целые отделы, автоматизируют рутину и масштабируют вашу прибыль 24/7.</span>
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-pink-600 transform hover:-translate-y-0.5 transition-all shadow-xl shadow-pink-500/30">
-                        Start Your Project
+                        <span data-lang="en">Start Your Project</span>
+                        <span data-lang="ru">Начать проект</span>
                     </a>
                     <a href="#cases" class="w-full sm:w-auto px-8 py-4 bg-white/5 text-white border border-white/10 font-bold rounded-xl hover:bg-white/10 transition-all">
-                        View Case Studies
+                        <span data-lang="en">View Case Studies</span>
+                        <span data-lang="ru">Кейсы</span>
                     </a>
                 </div>
                 <div class="mt-12 flex justify-center items-center space-x-8 text-slate-500">
@@ -372,41 +383,68 @@
                     Project Spotlight
                 </div>
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                    Your Personal Concierge in Sochi: <br><span class="text-primary">Premium Comfort Meets Modern Tech</span>
+                    <span data-lang="en">Your Personal Concierge in Sochi: <br><span class="text-primary">Premium Comfort Meets Modern Tech</span></span>
+                    <span data-lang="ru">Ваш персональный консьерж в Сочи: <br><span class="text-primary">Премиальный комфорт и современные технологии</span></span>
                 </h2>
                 
                 <div class="grid md:grid-cols-2 gap-12 mb-16">
                     <div class="space-y-8">
                         <h3 class="text-xl font-bold text-white flex items-center">
-                            <i class="fa-solid fa-star text-primary mr-3"></i> Why it’s perfect for guests
+                            <i class="fa-solid fa-star text-primary mr-3"></i> 
+                            <span data-lang="en">Why it’s perfect for guests</span>
+                            <span data-lang="ru">Почему это удобно гостю</span>
                         </h3>
                         <ul class="space-y-6">
                             <li class="flex items-start">
                                 <div class="mt-1.5 mr-4 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
                                 <div>
-                                    <p class="text-white font-bold mb-1">Seamless Booking & Designer Style</p>
-                                    <p class="text-slate-400 text-sm">Explore a curated catalog of designer apartments with high-quality photos and book your stay in seconds.</p>
+                                    <p class="text-white font-bold mb-1">
+                                        <span data-lang="en">Seamless Booking & Designer Style</span>
+                                        <span data-lang="ru">Бронирование и дизайнерский стиль</span>
+                                    </p>
+                                    <p class="text-slate-400 text-sm">
+                                        <span data-lang="en">Explore a curated catalog of designer apartments with high-quality photos and book your stay in seconds.</span>
+                                        <span data-lang="ru">Просматривайте каталог дизайнерских апартаментов с реальными фото и бронируйте за считанные секунды.</span>
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <div class="mt-1.5 mr-4 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
                                 <div>
-                                    <p class="text-white font-bold mb-1">Year-Round Relaxation</p>
-                                    <p class="text-slate-400 text-sm">Get instant information about our signature year-round heated pool and premium amenities directly in the bot.</p>
+                                    <p class="text-white font-bold mb-1">
+                                        <span data-lang="en">Year-Round Relaxation</span>
+                                        <span data-lang="ru">Отдых круглый год</span>
+                                    </p>
+                                    <p class="text-slate-400 text-sm">
+                                        <span data-lang="en">Get instant information about our signature year-round heated pool and premium amenities directly in the bot.</span>
+                                        <span data-lang="ru">Получайте мгновенную информацию о подогреваемом круглый год бассейне и премиальных удобствах прямо в боте.</span>
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <div class="mt-1.5 mr-4 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
                                 <div>
-                                    <p class="text-white font-bold mb-1">Real-Time Availability</p>
-                                    <p class="text-slate-400 text-sm">Integrated with HomeReserve, the system provides 100% accurate dates and pricing 24/7.</p>
+                                    <p class="text-white font-bold mb-1">
+                                        <span data-lang="en">Real-Time Availability</span>
+                                        <span data-lang="ru">Актуальность 24/7</span>
+                                    </p>
+                                    <p class="text-slate-400 text-sm">
+                                        <span data-lang="en">Integrated with HomeReserve, the system provides 100% accurate dates and pricing 24/7.</span>
+                                        <span data-lang="ru">Благодаря интеграции с HomeReserve, система предоставляет 100% точные даты и цены в режиме реального времени.</span>
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <div class="mt-1.5 mr-4 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
                                 <div>
-                                    <p class="text-white font-bold mb-1">Smart Booking Wizard</p>
-                                    <p class="text-slate-400 text-sm">A step-by-step guided flow handles the entire reservation process, making it faster and more intuitive.</p>
+                                    <p class="text-white font-bold mb-1">
+                                        <span data-lang="en">Smart Booking Wizard</span>
+                                        <span data-lang="ru">Умный мастер бронирования</span>
+                                    </p>
+                                    <p class="text-slate-400 text-sm">
+                                        <span data-lang="en">A step-by-step guided flow handles the entire reservation process, making it faster and more intuitive.</span>
+                                        <span data-lang="ru">Пошаговый мастер оформления заявки делает процесс бронирования быстрым и интуитивно понятным.</span>
+                                    </p>
                                 </div>
                             </li>
                         </ul>
@@ -415,28 +453,35 @@
                     <div class="bg-graphite p-8 rounded-3xl border border-white/10 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
                         <h3 class="text-xl font-bold text-white mb-6 flex items-center">
-                            <i class="fa-solid fa-microchip text-primary mr-3"></i> Enterprise-Grade Performance
+                            <i class="fa-solid fa-microchip text-primary mr-3"></i> 
+                            <span data-lang="en">Enterprise-Grade Performance</span>
+                            <span data-lang="ru">Технологичность и надежность</span>
                         </h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            This ecosystem is built for speed and security. Using a professional backend stack (Node.js, Prisma, and PostgreSQL), the system ensures lightning-fast response times and absolute data integrity.
+                            <span data-lang="en">This ecosystem is built for speed and security. Using a professional backend stack (Node.js, Prisma, and PostgreSQL), the system ensures lightning-fast response times and absolute data integrity.</span>
+                            <span data-lang="ru">Система построена на профессиональном стеке технологий (Node.js, Prisma, PostgreSQL). Это гарантирует молниеносную скорость работы, отказоустойчивость и сохранность ваших данных.</span>
                         </p>
                         <div class="space-y-4">
                             <div class="flex items-center justify-between p-3 bg-dark rounded-xl border border-white/5">
-                                <span class="text-xs font-bold text-slate-400">Backend</span>
+                                <span class="text-xs font-bold text-slate-400" data-lang="en">Backend</span>
+                                <span class="text-xs font-bold text-slate-400" data-lang="ru">Бэкенд</span>
                                 <span class="text-xs font-bold text-white">Node.js / Prisma</span>
                             </div>
                             <div class="flex items-center justify-between p-3 bg-dark rounded-xl border border-white/5">
-                                <span class="text-xs font-bold text-slate-400">Database</span>
+                                <span class="text-xs font-bold text-slate-400" data-lang="en">Database</span>
+                                <span class="text-xs font-bold text-slate-400" data-lang="ru">База данных</span>
                                 <span class="text-xs font-bold text-white">PostgreSQL</span>
                             </div>
                             <div class="flex items-center justify-between p-3 bg-dark rounded-xl border border-white/5">
-                                <span class="text-xs font-bold text-slate-400">Integrations</span>
+                                <span class="text-xs font-bold text-slate-400" data-lang="en">Integrations</span>
+                                <span class="text-xs font-bold text-slate-400" data-lang="ru">Интеграции</span>
                                 <span class="text-xs font-bold text-white">HomeReserve API</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <a href="https://t.me/Apartments_in_Sochi_bot" target="_blank" class="block w-full py-4 bg-primary text-white text-center font-bold rounded-xl hover:bg-pink-600 transition-all shadow-lg shadow-pink-500/20">
-                                Try the Bot
+                                <span data-lang="en">Try the Bot</span>
+                                <span data-lang="ru">Забронировать в Telegram</span>
                             </a>
                         </div>
                     </div>
@@ -629,6 +674,49 @@
     </footer>
 
     <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'inline-block' : 'none';
+            });
+            
+            // Update active state in switcher
+            document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
+            document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+            document.getElementById('lang-en').classList.toggle('text-slate-500', lang !== 'en');
+            document.getElementById('lang-ru').classList.toggle('text-slate-500', lang !== 'ru');
+
+            // Update navigation and other text content
+            const translations = {
+                en: {
+                    nav_problem: 'Problem',
+                    nav_solution: 'Solution',
+                    nav_work: 'Work',
+                    nav_process: 'Process',
+                    nav_pricing: 'Pricing',
+                    nav_faq: 'FAQ',
+                    nav_quote: 'Get a Quote'
+                },
+                ru: {
+                    nav_problem: 'Проблемы',
+                    nav_solution: 'Решения',
+                    nav_work: 'Кейсы',
+                    nav_process: 'Процесс',
+                    nav_pricing: 'Цены',
+                    nav_faq: 'FAQ',
+                    nav_quote: 'Узнать стоимость'
+                }
+            };
+
+            document.querySelectorAll('[data-t]').forEach(el => {
+                const key = el.getAttribute('data-t');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            localStorage.setItem('preferred_lang', lang);
+        }
+
         function toggleFaq(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('i');
@@ -650,6 +738,9 @@
         closeMenuBtn.addEventListener('click', toggleMobileMenu);
 
         document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang') || 'en';
+            setLanguage(savedLang);
+
             const observerOptions = {
                 threshold: 0.1
             };
